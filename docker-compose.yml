@@ -68,6 +68,7 @@ services:
     volumes:
       # Google STT 서비스 계정 JSON (호스트에서 마운트)
       - ./credentials:/app/credentials:ro
+      - ./backend/database/products.db:/app/backend/database/products.db:ro
     depends_on:
       elasticsearch:
         condition: service_healthy
